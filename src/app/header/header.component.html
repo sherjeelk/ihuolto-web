@@ -1,0 +1,42 @@
+<!--<div class="header">-->
+<!--  <div class="row">-->
+<!--    <div class="col">-->
+<!--      <a href=""><img src="assets/images/i-hulto-logo.png" style="width: 160px"></a>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+
+<!--</div>-->
+
+
+<div class="header">
+  <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img alt="" src="assets/images/i-hulto-logo.png" style="width: 160px"></a>
+        <div class="dropdown" style="cursor: pointer">
+          <a (click)="dropdown()" role="button" style="list-style-type: none; text-decoration: none; color: black">
+            <img
+              [src]="translationService.getLang() === 'en' ? 'assets/images/us-flag.png': 'assets/images/finland-flag.png'"
+              style=" width: 31px; cursor: pointer;">
+            <span class="ml-2">{{translationService.getLang() === 'en' ? 'En' : 'Fi'}}</span>
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path d="M7,10L12,15L17,10H7Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <div *ngIf="showLang" class="dropdown-content">
+            <a (click)="changeLanguage('en')" *ngIf="translationService.getLang() === 'fi'">
+              <img src="assets/images/us-flag.png" style="width: 31px; cursor: pointer;"> <span
+              class="ml-2">En</span></a>
+            <a (click)="changeLanguage('fi')" *ngIf="translationService.getLang() === 'en'">
+              <img src="assets/images/finland-flag.png" style="width: 31px; cursor: pointer;"> <span
+              class="ml-2">Fi</span></a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

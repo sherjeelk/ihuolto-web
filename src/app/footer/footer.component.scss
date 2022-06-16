@@ -1,0 +1,83 @@
+.footer{
+  background: #0A0A0A ;
+  color:white;
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  .links{
+    ul {list-style-type: none;}
+    li {
+      color: #4c4444;
+      font-size: 18px;
+      transition: color .2s;
+      &:hover{
+        text-decoration:none;
+        color: #3296c1;
+      }
+    }
+  }
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:#4c4444;
+      transition: color .2s;
+      &:hover{color:#4c4444}
+    }
+  }
+  .location{
+    i{font-size: 18px;
+    color: #9595A0;
+    }
+  }
+  .copyright p{border-top:1px dotted rgba(255,255,255,.1);}
+}
+.border_B
+{
+  border-bottom: 1px solid #4c4444;
+  margin-top: 15px;
+}
+.border_D
+{
+  border-bottom: 1px dotted #4c4444;
+  margin-top: 15px;
+}
+.links1{
+  ul {list-style-type: none;}
+  li a{
+    color: #4c4444;
+    transition: color .2s;
+
+    &:hover{
+      text-decoration:none;
+      color:#4c4444;
+    }
+  }
+}
+.section-header {
+  border-bottom: 1px solid #363544;
+  width: 100%;
+  padding: 0 0 15px;
+  margin: 0 0 40px;
+  display: block;
+  text-align: left;
+  position: relative;
+}
+.section-header span {
+  background-color: #3296c1;
+}
+.section-header span {
+  bottom: 2px;
+  display: block;
+  height: 4px;
+  margin: 0;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30px;
+}
+.btn_search
+{
+  background-color: #3896c1;
+}
+

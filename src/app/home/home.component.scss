@@ -1,0 +1,101 @@
+*{
+ font-family: Dinpro-R, serif;
+}
+.text-center{
+  text-align: center;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  transition: ease all .5s;
+
+}
+
+.stepper-container{
+  width: 60%;
+  transition: ease all .5s;
+
+}
+.info-container{
+  width: 28%;
+  //margin-left: 50px;
+  position: fixed;
+  right: 10%;
+  top: 100px;
+  transition: ease all .5s;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.hint:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  color: #1d1d1d;
+}
+
+.hint{
+  color: #adadad;
+}
+
+.main-card{
+  border-radius: 15px;
+
+}
+
+.container{min-height: 100vh}
+
+@media (max-width: 1200px) {
+  .info-container{
+    position: static;
+    order: 1;
+    width: 100%;
+    transition: ease all .5s;
+    //margin-top: 50px;
+    max-height: unset;
+  }
+
+  .stepper-container{
+    flex-grow: 1;
+    order: 2;
+    margin-top: 30px;
+    transition: ease all .5s;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .container{
+    padding: 0;
+  }
+  .main-card{
+    border-radius: 0;
+  }
+}
+
+
+.div-ov{
+  position: relative;
+  overflow: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #353b3b;
+}

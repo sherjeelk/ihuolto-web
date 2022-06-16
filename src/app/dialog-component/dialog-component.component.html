@@ -1,0 +1,23 @@
+<div>
+  <p>
+    <!--  {{"laSer"|language}} !! <br>{{"delSer"|language}}-->
+    <span *ngIf="data.type===1 else change;">
+      {{"areDelete"|language}}
+    </span>
+    <ng-template #change>
+      {{"changeSize"|language}}
+    </ng-template>
+
+  </p>
+  <div style="text-align: right">
+
+    <div *ngIf="data.type === 1">
+      <span class="m-r-20"><button (click)="close(1)" class="logout" mat-button>{{"yes"|language}}</button></span>
+      <span><button (click)="close(2)" class="cancel" mat-button>{{"no"|language}}</button></span>
+    </div>
+    <div *ngIf="data.type === 2">
+      <span class="m-r-20"><button (click)="changeSize(1)" class="logout" mat-button>{{"yes"|language}}</button></span>
+      <span><button (click)="changeSize(2)" class="cancel" mat-button>{{"no"|language}}</button></span>
+    </div>
+  </div>
+</div>

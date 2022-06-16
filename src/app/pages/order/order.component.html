@@ -1,0 +1,285 @@
+<mat-card class="main-card  mat-elevation-z5 my-3" style="border-radius: 22px;">
+
+  <h5 class="m-t-20 m-b-20 font-bold">{{"plYourOrd"|language}}</h5>
+  <p class="m-t-20 m-b-20 font-medium">{{"addPhotosProp"|language}}</p>
+  <div class="upload-cont">
+
+    <div class="pos-relative" style="padding: 10px">
+      <span (click)="removeImage('one')"
+            *ngIf="imageUrl.one.length > 0"
+            class="mdi mdi-close-circle-outline img-close"></span>
+      <div class="upload-btn-wrapper">
+        <button *ngIf="imageUrl.one.length === 0" class="btn_up">+</button>
+        <img *ngIf="imageUrl.one.length > 0" [src]="imageUrl.one"
+             alt="" class="product_img">
+        <input (change)="onFileChange($event, 'one')" type="file">
+      </div>
+    </div>
+    <div class="pos-relative" style="padding: 10px">
+      <span (click)="removeImage('two')"
+            *ngIf="imageUrl.two.length > 0"
+            class="mdi mdi-close-circle-outline img-close"></span>
+      <div class="upload-btn-wrapper">
+        <button *ngIf="imageUrl.two.length === 0" class="btn_up">+</button>
+        <img *ngIf="imageUrl.two.length > 0" [src]="imageUrl.two"
+             alt="" class="product_img">
+        <input (change)="onFileChange($event, 'two')" type="file">
+      </div>
+    </div>
+    <div class="pos-relative" style="padding: 10px">
+      <span (click)="removeImage('three')"
+            *ngIf="imageUrl.three.length > 0"
+            class="mdi mdi-close-circle-outline img-close"></span>
+      <div class="upload-btn-wrapper">
+        <button *ngIf="imageUrl.three.length === 0" class="btn_up">+</button>
+        <img *ngIf="imageUrl.three.length > 0" [src]="imageUrl.three"
+             class="product_img">
+        <input (change)="onFileChange($event, 'three')" type="file">
+      </div>
+    </div>
+    <div class="pos-relative" style="padding: 10px">
+      <span (click)="removeImage('four')"
+            *ngIf="imageUrl.four.length > 0"
+            class="mdi mdi-close-circle-outline img-close"></span>
+      <div class="upload-btn-wrapper">
+        <button *ngIf="imageUrl.four.length === 0" class="btn_up">+</button>
+        <img *ngIf="imageUrl.four.length > 0" [src]="imageUrl.four"
+             class="product_img">
+        <input (change)="onFileChange($event, 'four')" type="file">
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!--  <form class="my-3" [formGroup] = "orderSubmit" (ngSubmit) = "onSubmit()">-->
+  <form [formGroup]="orderSubmit" class="my-3">
+    <div><p class="font-medium">{{"tellUsName"|language}} <span
+      style="color: red;">*</span></p></div>
+    <div class="row">
+
+      <div class="col-md-6 col-lg-6">
+
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"firName"|language}}</mat-label>
+          <input class="w-full font-regular"
+                 formControlName="firstName"
+                 id="firstName"
+                 matInput
+                 required type="text">
+          <mat-error class="font-regular">{{"pleEntFirName"|language}}
+
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular">{{"laName"|language}}</mat-label>
+          <input class="w-full font-regular"
+                 formControlName="lastName"
+                 id="lastName"
+                 matInput
+                 required type="text">
+          <mat-error class="font-regular">
+            {{"pleEnLaName"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6 col-lg-6">
+        <div><p class="font-medium">{{"pho"|language}} <span
+          style="color: red;">*</span></p>
+        </div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"pho"|language}}</mat-label>
+          <input [maxLength]="10"
+                 class="w-full font-regular"
+                 formControlName="phone" matInput
+                 required type="tel">
+          <mat-error class="font-regular">
+            {{"pleEnPhoNum"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div><p class="font-medium">{{"em"|language}}</p></div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"em"|language}}</mat-label>
+          <input
+            class="w-full font-regular"
+            formControlName="email"
+            matInput
+            required type="email">
+          <mat-error class="font-regular">
+            {{"plEnEm"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col">
+        <div><p class="font-medium">{{"streetBuildNum"|language}} <span
+          style="color: red">*</span></p></div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"streetBuildNum"|language}}
+          </mat-label>
+          <input
+            class="w-full font-regular"
+            formControlName="streetBuilding"
+            matInput
+            required type="text">
+          <mat-error class="font-regular">
+            {{"pleEnLen"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 col-lg-6">
+        <div><p class="font-medium">{{"poCo"|language}} <span
+          style="color: red">*</span>
+        </p></div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"poCo"|language}}</mat-label>
+          <input
+            (input)="onSearchChange($event.target)"
+            class="w-full font-regular"
+            formControlName="postcode"
+            matInput
+            maxLength="5"
+            required
+            type="text">
+          <mat-error class="font-regular">
+            {{"pleEnPinCo"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 col-lg-6">
+        <div><p class="font-medium">{{"cit"|language}}</p></div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"cit"|language}}</mat-label>
+          <input
+            class="w-full font-regular"
+            formControlName="city"
+            matInput
+            readonly
+            required type="text">
+          <mat-error class="font-regular">
+            {{"pleEnCitName"|language}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label class="font-regular"> {{"anyNo"|language}}</mat-label>
+          <textarea
+            class="w-full font-regular"
+
+            formControlName="anyNote"
+            matInput required></textarea>
+          <mat-error class="font-regular">
+            {{"pleEnAnyNo"|language}}
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+    </div>
+    <!--    <button type="submit">Place Order</button>-->
+
+  </form>
+  <div class="d-flex flex-column mx-3 my-0">
+    <div>
+      <mat-checkbox (change)="couponEvent($event)">{{"iHavCoup"|language}}
+      </mat-checkbox>
+      <!--      <div class="row pb-3">-->
+      <!--        <div *ngIf="addCoupon" class="coupon-div col-lg-6">-->
+      <!--          <input type="text" class="input-field" matInput placeholder="Add coupon" #coupon>-->
+      <!--          <button mat-raised-button class="apply-btn" (click)="addCouponCode(coupon)">Apply</button>-->
+      <!--        </div>-->
+<!--      desktop display-->
+      <div *ngIf="addCoupon" class="pb-3 desktop-display">
+
+        <mat-card class="coupon-card">
+          <input #coupon [readonly]="readButton" class="coupon-input"
+                [placeholder]="readButton ? data.couponValue : 'Käytä kuponki '" type="text">
+        </mat-card>
+        <button (click)="addCouponCode(coupon)" *ngIf="!applied" class="apply-btn"
+                mat-raised-button>{{"app"|language }}
+        </button>
+        <button (click)="RemoveCouponCode(coupon)" *ngIf="applied" class="apply-btn"
+                mat-raised-button> {{"remove"|language}}
+        </button>
+
+      </div>
+
+
+      <!--      mobile display-->
+      <div *ngIf="addCoupon" class="pb-2 mobile-display">
+
+        <mat-card class="coupon-card-mobile">
+          <input #coupon [readonly]="readButton" class="coupon-input"
+                [placeholder]="readButton ? data.couponValue :'applyCoupon '|language" type="text">
+        </mat-card>
+        <button (click)="addCouponCode(coupon)" *ngIf="!applied" class="apply-btn-mobile"
+                mat-raised-button>{{"app"|language }}
+        </button>
+        <button (click)="RemoveCouponCode(coupon)" *ngIf="applied" class="apply-btn-mobile"
+                mat-raised-button> {{"remove"|language}}
+        </button>
+
+      </div>
+
+
+
+    </div>
+
+
+    <!--    </div>-->
+    <div>
+      <mat-checkbox (change)="acceptTerms($event)"
+                    class="example-margin">{{"iAcc"|language}}
+        <a (click)="openDialog()"
+           style="color: #00A2E1">{{"terCond"|language}}
+      </a>
+      </mat-checkbox>
+      <!--      <span class="mx-3 font-regular"></span>-->
+    </div>
+    <div>
+<!--      <mat-checkbox (change)="cancelPolicy($event)"-->
+<!--                    class="example-margin">{{"canPol"|language}}-->
+<!--      </mat-checkbox>-->
+<!--      &lt;!&ndash;      <span class="mx-3 font-regular"></span>&ndash;&gt;-->
+    </div>
+  </div>
+</mat-card>
+
+
+<div class="example-button-row">
+  <!--  <button mat-button class="btn_proceed font-medium" (click)="onSubmit()"-->
+  <!--          [disabled]="(!orderSubmit.valid || !cancel || !acceptTerm)">Proceed to payment-->
+  <!--  </button>-->
+  <button (click)="imageUpload()"
+          [disabled]="(!orderSubmit.valid || !acceptTerm)"
+          class="btn_proceed font-medium"
+          mat-button>{{"finishOrder"|language}}
+
+  </button>
+
+
+</div>
+
+
+

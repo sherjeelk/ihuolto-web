@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use '~@angular/material' as mat;
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 700);
+$my-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  )
+));
+@include mat.all-component-themes($my-theme);
+
+@import url('https://fonts.cdnfonts.com/css/dinpro-bold');
+//@import url('assets/fonts/DINPro-Medium_13936.ttf');
+$mdi-font-path: './node_modules/@mdi/font/scsss/materialdesignicons.scss';
+
+
+  html, body { height: 100%;
+  }
+body { margin: 0; }
+
+@font-face {
+   font-family: 'Dinpro-M';
+   src: url("assets/fonts/DINPro-Medium_13936.ttf");
+}
+@font-face {
+  font-family: 'Dinpro-B';
+  src: url("assets/fonts/DINPro-Bold_13934.ttf");
+}
+@font-face {
+  font-family: 'Dinpro-R';
+  src: url("assets/fonts/dinpro-regular.otf");
+}
+.root{
+  height: 100%;
+}
+
+
+
+
+.font-bold
+{
+  font-family: Dinpro-B, serif;
+}
+.font-medium
+{
+  font-family: Dinpro-M, serif;
+}
+.font-regular
+{
+  font-family: Dinpro-R, serif ;
+}
+.ng-select { .ng-dropdown-panel { width: auto !important; max-width: 550px; } }
+
+
+
+
+

@@ -1,0 +1,168 @@
+h5
+{
+  color:#00A2E1;
+}
+p{
+  font-size: 12px;
+}
+.div_box
+{
+  border: 1px solid #353b3b;
+  border-radius: 15px;
+}
+.plus
+{
+  font-size: 24px;
+  padding: 17px 31px;
+  color: #adadad;
+}
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+.btn_proceed
+{
+  width: 30%;
+  background-color: #00A2E1;
+  color: white;
+  border-radius: 10px;
+  float: right;
+  padding: 5px;
+  outline: none;
+
+}
+
+/* On screens that are 992px wide or less */
+@media screen and (max-width: 992px) {
+  .btn_proceed
+  {
+    width: 30%;
+
+
+  }
+}
+
+/* On screens that are 600px wide or less*/
+@media screen and (max-width: 600px) {
+  .btn_proceed
+  {
+    width: 47%;
+
+
+  }
+}
+.upload-cont{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  //margin-left: 30px;
+}
+.btn_up {
+  border: none;
+  color: gray;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 20px;
+  background: #80808047;
+}
+.product_img{
+  height: 55px;
+  width: 55px;
+}
+.error{
+  margin-top: -20px;
+}
+
+.input-field{
+  padding: 10px 0;
+}
+
+.coupon-div{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 1px 10px;
+  border-radius: 6px;
+  margin-left: 35px;
+}
+
+.apply-btn{
+  background-color: #00A2E1;
+  color: #ffff;
+  border-radius: 0 32px 32px 0;
+  padding: 0 24px;
+  outline: none;
+}
+
+.coupon-input{
+  border: none;
+  outline: none;
+}
+
+.coupon-card{
+  display: inline;
+  border-radius: 32px 0 0 32px;
+  padding: 8px 10px;
+  margin-left: 24px;
+}
+@media screen and (max-width: 786px) {
+  .coupon-card {
+    margin-left: 0px;
+  }
+  .desktop-display{
+    display: none;
+  }
+  .coupon-card-mobile {
+    display: inline;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-left: 24px;
+  }
+  .apply-btn-mobile {
+    background-color: #00A2E1;
+    color: #ffff;
+    padding: 0 24px;
+    outline: none;
+    margin-top: 15px;
+    margin-left: 74px;
+    border-radius: 13px;
+  }
+}
+@media screen  and (min-width: 786px){
+  .mobile-display{
+    display: none;
+  }
+ }
+@media only screen and (max-width: 300px) {
+  .coupon-card {
+    margin-left: 0px;
+  }
+  .apply-btn {
+    padding: 0 24px;
+    margin-top: 16px;
+    margin-left: 63px;
+    border-radius: 8px;
+    padding: 0px -26px;
+  }
+}
+

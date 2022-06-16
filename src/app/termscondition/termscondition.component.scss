@@ -1,0 +1,21 @@
+.terms_content{
+  padding: 45px;
+}
+@media screen and (max-width: 768px) {
+  .heading{
+    font-size: 20px;
+  }
+  .terms_content {
+    padding: 12px 0px;
+  }
+}
+.column{
+  display: flex;
+  justify-content: space-between;
+}
+.price-margin{
+  margin-right: 25px;
+}
+:focus-visible {
+  outline: none;
+}

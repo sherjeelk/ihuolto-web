@@ -1,0 +1,75 @@
+<mat-card class="info-card mat-elevation-z5"
+          style="margin:5px; border-radius: 22px;">
+  <div class="d-flex" style="justify-content: space-between;">
+
+    <div class="main_heading font-medium">{{"totPrice"|language}}</div>
+    <div class="price_heading font-bold">{{data.total}} €</div>
+  </div>
+  <hr>
+  <div *ngIf="!data.contactMe  && data.selectedService" class="d-flex "
+       style="justify-content: space-between;">
+    <div><p class="font-regular">{{"selectedServ"|language}}</p></div>
+    <div *ngIf="data.selectedService">
+      <p class="font-regular" style="color: #00A2E1; ">{{this.translation.getLang() === 'en' ? data.selectedService.name : data.selectedService.name_fi}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="data.order.subService" class="d-flex"
+       style="justify-content: space-between;">
+    <p class="font-regular">{{"subService"|language}}</p>
+    <p class="font-regular"
+       style="color: #00A2E1;">{{data.order.subService}}</p>
+  </div>
+
+
+  <div *ngIf="data.customProduct.length > 0" class="d-flex"
+       style="justify-content: space-between;">
+    <p class="font-regular">{{"customProduct"|language}}</p>
+    <p class="font-regular"
+       style="color: #00A2E1;" *ngFor="let customProducts of data.customProduct ">{{customProducts.name}}</p>
+  </div>
+
+
+  <div *ngIf="area > 0" class="d-flex"
+       style="justify-content: space-between;">
+
+    <div><p class="font-regular">{{"area"|language}}:</p></div>
+    <div><p class="font-regular"
+            style="color: #00A2E1;">{{data.serviceData.meterSqValue}}
+      m<sup>2</sup></p></div>
+  </div>
+
+  <div *ngIf="!data.contactMe && data.serviceData.brandValue.length > 0"
+       class="d-flex" style="justify-content: space-between;">
+
+    <div><p class="font-regular">{{"selPro"|language}}:</p></div>
+    <div>
+      <div *ngFor="let prod of data.serviceData.brandValue " class="d-flex justify-content-around flex-fill">
+      <div class="flex-fill text-center">
+        <p class="font-regular"
+           style="color: #00A2E1;">{{prod.name}}</p>
+      </div>
+
+      <div>
+        <button (click)="removeProduct(prod)" class="remove-btn">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path
+              d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="data.couponValue" class="d-flex"
+       style="justify-content: space-between;">
+    <div><p class="font-regular">{{"cou"|language}}:</p></div>
+    <p class="font-regular" style="color: #00A2E1;">{{data.couponValue}}</p>
+  </div>
+
+
+</mat-card>
+
